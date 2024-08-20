@@ -1,6 +1,8 @@
-package CristianoRocchi.entities;
+package cristianorocchi.entities;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 
 enum TipoEvento {
     PUBBLICO, PRIVATO
@@ -15,7 +17,7 @@ public class Evento {
     private Long id;
 
     private String titolo;
-    private String dataEvento;
+    private LocalDate dataEvento;
     private String descrizione;
 
     @Enumerated(EnumType.STRING)
@@ -26,7 +28,7 @@ public class Evento {
     public Evento() {
     }
 
-    public Evento(String titolo, String dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
+    public Evento(String titolo, LocalDate dataEvento, String descrizione, TipoEvento tipoEvento, int numeroMassimoPartecipanti) {
         this.titolo = titolo;
         this.dataEvento = dataEvento;
         this.descrizione = descrizione;
@@ -34,7 +36,7 @@ public class Evento {
         this.numeroMassimoPartecipanti = numeroMassimoPartecipanti;
     }
 
-    // Getters e Setters
+    /*getter setters*/
     public Long getId() {
         return id;
     }
@@ -51,11 +53,11 @@ public class Evento {
         this.titolo = titolo;
     }
 
-    public String getDataEvento() {
+    public LocalDate getDataEvento() {
         return dataEvento;
     }
 
-    public void setDataEvento(String dataEvento) {
+    public void setDataEvento(LocalDate dataEvento) {
         this.dataEvento = dataEvento;
     }
 
